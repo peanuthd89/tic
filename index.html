@@ -8,9 +8,22 @@
     <link rel= "stylesheet" href="tic_tac.css"/>
 </head>
 <body background="IMG_4392(1).jpg" > 
-    <div class="container">
+    
         <h1 class="blinking" id="playText">Tic Tac Toe</h1>
+       <div>
+        <h4>enter players names </h4>
+              <label for="player1">Player 1</label>
+              <input type="text" placeholder="enter name" name="player1" id = "player1">
+           
+         
+              <label for="player2">Player 2</label>
+
+              <input type="text" placeholder="enter name" name="player2" id = "player2">
+            
+              <button class="btn" onclick="displayGame()"> start game </button>
+            
         <button id="startOver">Start Over</button>
+      </div>
         <div id="board">
           <div class="box" id="0"></div>
           <div class="box" id="1"></div>
@@ -23,7 +36,7 @@
           <div class="box" id="8"></div>
           
         </div>
-      </div>
+      
       
     <script src="tic_tac.js"></script>
 </body>

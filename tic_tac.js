@@ -10,7 +10,8 @@ const spaces =
 // create and x and o string 
 const o = "$";
 const x = "x";
-
+let player1 = '';
+let player2 = '';
 // create a player to start of the board with(o)
 let currentPlayer = o ;
 
@@ -39,8 +40,14 @@ const id= i.target.id;
 if (!spaces[id]){
 spaces[id] =currentPlayer;
 i.target.innerText = currentPlayer;
-if (winningPlayer(currentPlayer)){
-playText.innerHTML =`${currentPlayer} wins!!`;
+if (winningPlayer(currentPlayer)){ 
+  if(currentPlayer == '$'){playText.innerHTML =`${player1} wins!!`;
+  
+
+  } else {
+    playText.innerHTML =`${player2} wins!!`;
+  }
+
 return;
   
     } 
@@ -83,10 +90,15 @@ console.log(`${player} wins on the middle vertical`);
 return true;}
   } 
   };
-  
+  function displayGame () {
+    player1 = document.getElementById('player1').value.toString();
+    player2 = document.getElementById('player2').value.toString();
+    console.log(player1, player2)
+  }
 
 //create start over button to reset the game 
 startOver.addEventListener("click", () => {
+playText.innerHTML =`TIC TAC TOE`;
 spaces.forEach((space, index) => {
 spaces[index] = null;});
 boxes.forEach((box) => {
